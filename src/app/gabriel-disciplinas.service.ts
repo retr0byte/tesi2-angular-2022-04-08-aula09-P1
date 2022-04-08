@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { listData } from './list';
-import { Disciplina } from '../disciplinas';
+import { Disciplina } from './disciplina';
 
 @Injectable()
 export class GabrielDisciplinasService {

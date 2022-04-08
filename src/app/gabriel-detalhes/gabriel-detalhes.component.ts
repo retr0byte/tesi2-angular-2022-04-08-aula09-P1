@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { listData } from '../list';
-import { Disciplina } from '../disciplinas';
+import { Disciplina } from '../disciplina';
 
 @Component({
   selector: 'app-gabriel-detalhes',
