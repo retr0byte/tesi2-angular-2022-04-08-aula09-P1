@@ -1,0 +1,119 @@
+<h2>Disciplinas</h2>
+<div style="width:50%;">
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #codigo
+      class="form-control"
+      id="codigo"
+      type="text"
+      placeholder="codigo"
+    />
+    <label for="codigo">Codigo: </label>
+  </div>
+
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #nome
+      class="form-control"
+      id="nome"
+      type="text"
+      placeholder="nome"
+    />
+    <label for="nome">Nome: </label>
+  </div>
+
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #diaDaSemana
+      class="form-control"
+      id="diaDaSemana"
+      type="text"
+      placeholder="Dia da semana"
+    />
+    <label for="diaDaSemana">Dia da semana: </label>
+  </div>
+
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #horario
+      class="form-control"
+      id="horario"
+      type="text"
+      placeholder="horario"
+    />
+    <label for="horario">Horario</label>
+  </div>
+
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #ementa
+      class="form-control"
+      id="ementa"
+      type="text"
+      placeholder="ementa"
+    />
+    <label for="ementa">Ementa</label>
+  </div>
+
+  <div class="form-floating" style="margin: 10px 0;">
+    <input
+      #objetivos
+      class="form-control"
+      id="objetivos"
+      type="text"
+      placeholder="objetivos"
+    />
+    <label for="objetivos">Objetivos</label>
+  </div>
+
+  <button
+    style="margin-top:10px;"
+    class="btn btn-secondary"
+    (click)="
+      disciplinas.add({
+        codigo: codigo.value,
+        nome: nome.value,
+        diaDaSemana: diaDaSemana.value,
+        horario: horario.value,
+        ementa: ementa.value,
+        objetivos: objetivos.value
+      });
+      codigo.value = '';
+      nome.value = '';
+      diaDaSemana.value = '';
+      horario.value = '';
+      ementa.value = '';
+      objetivos.value = ''
+    "
+  >
+    Adicionar nova
+  </button>
+</div>
+
+<br />
+
+<table class="table">
+  <tr>
+    <th>Código</th>
+    <th>Nome</th>
+    <th>Dia da semana</th>
+    <th>Horário</th>
+    <th>Info. Detalhada</th>
+    <th>Excluir</th>
+  </tr>
+
+  <tr *ngFor="let disciplina of disciplinas.getList(); index as i">
+    <td>{{ disciplina.codigo }}</td>
+    <td>{{ disciplina.nome }}</td>
+    <td>{{ disciplina.diaDaSemana }}</td>
+    <td>{{ disciplina.horario }}</td>
+    <td>
+      <a [routerLink]="['/disciplinas/detalhes', i]">as</a>
+    </td>
+    <td>
+      <button class="btn btn-outline-danger" (click)="disciplinas.remove(i)">
+        -
+      </button>
+    </td>
+  </tr>
+</table>

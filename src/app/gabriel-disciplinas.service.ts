@@ -1,18 +1,10 @@
 import { Injectable } from '@angular/core';
 import { listData } from './list';
-
-interface Disciplinas {
-  codigo: string;
-  nome: string;
-  diaDaSemana: string;
-  horario: string;
-  ementa: string;
-  objetivos: string;
-}
+import { Disciplina } from '../disciplinas';
 
 @Injectable()
 export class GabrielDisciplinasService {
-  list: Array<Disciplinas> = listData;
+  list: Array<Disciplina> = listData;
 
   constructor() {}
 
@@ -20,7 +12,7 @@ export class GabrielDisciplinasService {
     return this.list;
   }
 
-  add(disciplina: Disciplinas) {
+  add(disciplina: Disciplina) {
     this.list.push(disciplina);
   }
 
