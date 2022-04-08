@@ -108,7 +108,9 @@
     <td>{{ disciplina.diaDaSemana }}</td>
     <td>{{ disciplina.horario }}</td>
     <td>
-      <a [routerLink]="['/disciplinas/detalhes', i]">as</a>
+      <a [routerLink]="['/disciplinas/detalhes', i]"
+        ><i class="fa-solid fa-up-right-from-square"></i
+      ></a>
     </td>
     <td>
       <button class="btn btn-outline-danger" (click)="disciplinas.remove(i)">
